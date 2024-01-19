@@ -16,7 +16,7 @@
         h1 {
             margin-bottom: 20px;
             font-family: Arial, sans-serif;
-            color: rgb(0, 169, 199);
+            color: rgb(26, 86, 97);
         }
         #canvas {
             margin-top: 20px;
@@ -42,10 +42,13 @@
 </head>
 <body bgcolor="white">
     <h1>Juego del Ahorcado</h1>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="600" height="400"></canvas>
     <div id="wordDisplay"></div>
     <div id="guessesDisplay"></div>
     <div id="letterButtons"></div>
+
+    
+    <button id="refresh">Jugar de nuevo</button>
 
     <script>
         const canvas = document.getElementById('canvas');
@@ -56,7 +59,7 @@
         const guessesDisplay = document.getElementById('guessesDisplay');
 
         let guessedLetters = [];
-        let wrongAttempts = 0;
+        let wrongAttempts = 1;
 
         function drawHangman() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,7 +114,9 @@
                 ctx.lineTo(215, 225);
                 ctx.stroke();
             }
+            
         }
+        
 
         function updateWordDisplay() {
             let display = '';
